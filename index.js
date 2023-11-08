@@ -15,13 +15,9 @@ const parceirosAgrupados = {
     PJ: [],
 }
 
-const parceirosString = parceiros.map((parceiro) => {
+parceiros.forEach((parceiro) => {
     parceiro.parceirosId = parceiro.parceirosId.toString()
-    return parceiro
-})
-
-parceirosString.forEach((parceiro) => {
-    if (parceiro.parceirosId.toString().length < 14) {
+    if (parceiro.parceirosId.length < 14) {
         parceirosAgrupados.PF.push(parceiro)
     } else {
         parceirosAgrupados.PJ.push(parceiro)
